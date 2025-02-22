@@ -1,15 +1,9 @@
-"use client";
-
-import { navItems } from "@/data";
-
+"use client"; // Needed for client-side interactivity
+import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
-// import Grid from "@/components/Grid";
-// import Footer from "@/components/Footer";
-// import Clients from "@/components/Clients";
-// import Approach from "@/components/Approach";
-// import Experience from "@/components/Experience";
-// import RecentProjects from "@/components/RecentProjects";
+import RecentProject from "@/components/RecentProject"; // Ensure the path is correct
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
+import { navItems } from "@/data";
 
 const Home = () => {
   return (
@@ -17,9 +11,11 @@ const Home = () => {
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
-        {/* <Grid />
-        <RecentProjects />
-        <Clients />
+        <Experience />
+        <RecentProject />
+
+        {/* Uncomment these if needed */}
+        {/* <Clients />
         <Experience />
         <Approach />
         <Footer /> */}
