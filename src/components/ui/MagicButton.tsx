@@ -1,4 +1,3 @@
-import { FaLocationArrow } from "react-icons/fa6";
 import { ShinyButton } from "../magicui/shiny-button";
 
 export function ShinyButtonDe() {
