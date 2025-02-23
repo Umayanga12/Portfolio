@@ -1,4 +1,5 @@
 import React from "react";
+import FooterDock from "./ui/FooterDock";
 
 const Footer = () => {
   return (
@@ -21,6 +22,9 @@ const Footer = () => {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
+      </div>
+      <div>
+        <FooterDock />
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
