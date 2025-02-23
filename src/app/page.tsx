@@ -1,4 +1,5 @@
 "use client"; // Needed for client-side interactivity
+import AboutMe from "@/components/Grid";
 import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import RecentProject from "@/components/RecentProject"; // Ensure the path is correct
@@ -11,6 +12,7 @@ const Home = () => {
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
+        <AboutMe />
         <Experience />
         <RecentProject />
 
