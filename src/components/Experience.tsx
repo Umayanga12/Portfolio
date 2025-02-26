@@ -12,7 +12,7 @@ const timelineData = [
           skills.
         </p>
         <img
-          src="/images/portfolio-launch.png"
+          src="/portfolio.png"
           alt="Portfolio Launch"
           className="mt-2 rounded-lg"
         />
@@ -27,19 +27,35 @@ const timelineData = [
           Develop first version of my NFT based authentication system as
           research
         </p>
+        <img
+          src="/diagrem.png"
+          alt="inpro industries web"
+          className="mt-2 rounded-lg w-[50%]"
+        />
         <p>
           Develop the web application for inpro industries PVT using Next js.
         </p>
+        <img
+          src="/inpro.png"
+          alt="inpro industries web"
+          className="mt-2 rounded-lg w-[50%]"
+        />
         <p>
           Start the internship at Airport and Aviation servies private Limited
           Srilanka
         </p>
+        <img src="/aasl.png" alt="AASL" className="mt-2 rounded-lg w-[50%]" />
         {/* <img
           src="/images/fullstack-course.png"
           alt="Full-Stack Course"
           className="mt-2 rounded-lg"
         /> */}
         <p>Started the startup Company</p>
+        <img
+          src="/terracodedev_cover.jpeg"
+          alt="Terracode dev"
+          className="mt-2 rounded-lg w-[50%]"
+        />
       </>
     ),
   },

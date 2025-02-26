@@ -1,6 +1,7 @@
 import React from "react";
 import { PinContainer } from "./ui/Pin";
 import { FaLocationArrow } from "react-icons/fa";
+import { GitHubButton } from "./ui/GithubButton";
 import { projects } from "@/data";
 
 export default function RecentProject() {
@@ -17,7 +18,7 @@ export default function RecentProject() {
             key={item.id}
           >
             <PinContainer
-              title="/ui.aceternity.com"
+              title="Github.com/Umayanga12"
               href="https://twitter.com/mannupaaji"
             >
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
@@ -74,6 +75,10 @@ export default function RecentProject() {
           </div>
         ))}
       </div>
+      <p className="text-white-200 md:mt-10 my-5 text-center">
+        To explore my all projects, Reach to my Github
+      </p>
+      <GitHubButton />
     </div>
   );
 }
