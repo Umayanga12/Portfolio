@@ -5,6 +5,7 @@ import ThreeGlobe from "three-globe";
 import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "@/data/globe.json";
+
 declare module "@react-three/fiber" {
   interface ThreeElements {
     threeGlobe: Object3DNode<ThreeGlobe, typeof ThreeGlobe>;
@@ -61,6 +62,9 @@ interface WorldProps {
 let numbersOfRings = [0];
 
 export function Globe({ globeConfig, data }: WorldProps) {
+  const [ThreeGlobeModule, setThreeGlobeModule] = useState<
+    typeof ThreeGlobe | null
+  >(null);
   const [globeData, setGlobeData] = useState<
     | {
         size: number;
@@ -73,6 +77,12 @@ export function Globe({ globeConfig, data }: WorldProps) {
   >(null);
 
   const globeRef = useRef<ThreeGlobe | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      import("three-globe").then((mod) => setThreeGlobeModule(mod.default));
+    }
+  }, []);
 
   const defaultProps = {
     pointSize: 1,
@@ -92,11 +102,11 @@ export function Globe({ globeConfig, data }: WorldProps) {
   };
 
   useEffect(() => {
-    if (globeRef.current) {
+    if (globeRef.current && ThreeGlobeModule) {
       _buildData();
       _buildMaterial();
     }
-  }, [globeRef.current]);
+  }, [globeRef.current, ThreeGlobeModule]);
 
   const _buildMaterial = () => {
     if (!globeRef.current) return;
@@ -157,7 +167,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         .showAtmosphere(defaultProps.showAtmosphere)
         .atmosphereColor(defaultProps.atmosphereColor)
         .atmosphereAltitude(defaultProps.atmosphereAltitude)
-        .hexPolygonColor(() => {
+        .hexPolygonColor((e) => {
           return defaultProps.polygonColor;
         });
       startAnimation();
@@ -177,13 +187,13 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .arcAltitude((e) => {
         return (e as { arcAlt: number }).arcAlt * 1;
       })
-      .arcStroke(() => {
+      .arcStroke((e) => {
         return [0.32, 0.28, 0.3][Math.round(Math.random() * 2)];
       })
       .arcDashLength(defaultProps.arcLength)
       .arcDashInitialGap((e) => (e as { order: number }).order * 1)
       .arcDashGap(15)
-      .arcDashAnimateTime(() => defaultProps.arcTime);
+      .arcDashAnimateTime((e) => defaultProps.arcTime);
 
     globeRef.current
       .pointsData(data)
@@ -295,11 +305,10 @@ export function hexToRgb(hex: string) {
 }
 
 export function genRandomNumbers(min: number, max: number, count: number) {
-  const arr = [];
-  while (arr.length < count) {
-    const r = Math.floor(Math.random() * (max - min)) + min;
-    if (arr.indexOf(r) === -1) arr.push(r);
+  let res = [];
+  for (let i = 0; i < count; i++) {
+    let num = Math.floor(Math.random() * (max - min) + min);
+    res.push(num);
   }
-
-  return arr;
+  return res;
 }

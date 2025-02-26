@@ -24,14 +24,22 @@ const timelineData = [
     content: (
       <>
         <p>
-          Completed a full-stack development course and started working on
-          freelance projects.
+          Develop first version of my NFT based authentication system as
+          research
         </p>
-        <img
+        <p>
+          Develop the web application for inpro industries PVT using Next js.
+        </p>
+        <p>
+          Start the internship at Airport and Aviation servies private Limited
+          Srilanka
+        </p>
+        {/* <img
           src="/images/fullstack-course.png"
           alt="Full-Stack Course"
           className="mt-2 rounded-lg"
-        />
+        /> */}
+        <p>Started the startup Company</p>
       </>
     ),
   },

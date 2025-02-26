@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Lottie from "react-lottie";
+//import Lottie from "react-lottie";
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
-// import GridGlobe from "./GridGlobe";
+import { GridGlobe } from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 
 export const BentoGrid = ({
@@ -43,8 +43,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["Python", "Golang", "Typescript"];
+  const rightLists = ["Flutter", "Laravel", "GraphQL"];
 
   const [copied, setCopied] = useState(false);
 
@@ -151,7 +151,7 @@ export const BentoGridItem = ({
               <div
                 className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"}`}
               >
-                <Lottie options={defaultOptions} height={200} width={400} />
+                {/* <Lottie options={defaultOptions} height={200} width={400} /> */}
               </div>
             </div>
           )}
