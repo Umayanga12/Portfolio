@@ -10,14 +10,14 @@ const ButtonText = () => {
   );
 };
 
+
 export function GitHubButton() {
   return (
     <div className="flex items-center justify-center h-full w-full">
-      <a href="https://github.com/Umayanga12">
-        <RainbowButton>
-          <ButtonText />
-        </RainbowButton>
-      </a>
+      <RainbowButton onClick={() => (window.location.href = "https://github.com/Umayanga12")}>
+        <ButtonText />
+      </RainbowButton>
     </div>
   );
 }
+

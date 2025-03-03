@@ -1,9 +1,10 @@
+
 import React from "react";
 import { PinContainer } from "./ui/Pin";
 import { FaLocationArrow } from "react-icons/fa";
 import { GitHubButton } from "./ui/GithubButton";
 import { projects } from "@/data";
-
+import Link from 'next/link'
 export default function RecentProject() {
   return (
     <div className="py-20">
@@ -11,22 +12,19 @@ export default function RecentProject() {
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
       </h1>
+
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
         {projects.map((item) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
           >
-            <PinContainer
-              title="Github.com/Umayanga12"
-              href="https://twitter.com/mannupaaji"
-            >
+            <PinContainer title="Github.com/Umayanga12">
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimg" />
                 </div>
                 <img
                   src={item.img}
@@ -59,26 +57,26 @@ export default function RecentProject() {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <img src={icon} alt="icon" className="p-2" />
                     </div>
                   ))}
                 </div>
 
                 <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Live Site
-                  </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  <img src="/git.svg" alt="github" className="p-2" />
                 </div>
               </div>
             </PinContainer>
           </div>
         ))}
       </div>
-      <p className="text-white-200 md:mt-10 my-5 text-center">
-        To explore my all projects, Reach to my Github
+      <p className="text-gray-200 md:mt-10 my-5 text-center">
+        To explore all my projects, visit my GitHub
       </p>
-      <GitHubButton />
+        <Link href="https://github.com/Umayanga12">
+                <GitHubButton />
+            </Link>  
     </div>
   );
 }
+

@@ -1,5 +1,5 @@
 import { useState } from "react";
-//import Lottie from "react-lottie";
+import Lottie from "react-lottie";
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import { GridGlobe } from "./GridGlobe";
@@ -58,7 +58,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = "imanthaumayanga512@gmail.com";
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
@@ -117,7 +117,7 @@ export const BentoGridItem = ({
             {title}
           </div>
 
-          {/* {id === 2 && <GridGlobe />} */}
+          {/*{id === 2 && <GridGlobe />}*/}
 
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
@@ -151,7 +151,7 @@ export const BentoGridItem = ({
               <div
                 className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"}`}
               >
-                {/* <Lottie options={defaultOptions} height={200} width={400} /> */}
+                <Lottie options={defaultOptions} height={200} width={400} /> 
               </div>
             </div>
           )}
