@@ -58,7 +58,7 @@ const Hero = () => {
             Sri Lanka.
           </p>
 
-          <a href="#about">
+          <a href="#project">
             <ShinyButtonDe />
           </a>
         </div>
