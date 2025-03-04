@@ -1,7 +1,7 @@
 import React from "react";
 import { SparklesText } from "./magicui/sparkles-text";
 import { ExTimeline } from "./ui/ExTimeLine";
-
+import Image from "next/image";
 const timelineData = [
   {
     title: "2025",
@@ -11,7 +11,7 @@ const timelineData = [
           Launched my personal portfolio website showcasing my projects and
           skills.
         </p>
-        <img
+        <Image
           src="/portfolio.png"
           alt="Portfolio Launch"
           className="mt-2 rounded-lg"
@@ -27,7 +27,7 @@ const timelineData = [
           Develop first version of my NFT based authentication system as
           research
         </p>
-        <img
+        <Image
           src="/diagrem.png"
           alt="inpro industries web"
           className="mt-2 rounded-lg w-[50%]"
@@ -35,7 +35,7 @@ const timelineData = [
         <p>
           Develop the web application for inpro industries PVT using Next js.
         </p>
-        <img
+        <Image
           src="/inpro.png"
           alt="inpro industries web"
           className="mt-2 rounded-lg w-[50%]"
@@ -44,14 +44,14 @@ const timelineData = [
           Start the internship at Airport and Aviation servies private Limited
           Srilanka
         </p>
-        <img src="/aasl.png" alt="AASL" className="mt-2 rounded-lg w-[50%]" />
+        <Image src="/aasl.png" alt="AASL" className="mt-2 rounded-lg w-[50%]" />
         {/* <img
           src="/images/fullstack-course.png"
           alt="Full-Stack Course"
           className="mt-2 rounded-lg"
         /> */}
         <p>Started the startup Company</p>
-        <img
+        <Image
           src="/terracodedev_cover.jpeg"
           alt="Terracode dev"
           className="mt-2 rounded-lg w-[50%]"

@@ -1,6 +1,5 @@
 import { FaGithub } from "react-icons/fa";
 import { RainbowButton } from "../magicui/rainbow-button";
-import Link from 'next/link';
 
 const ButtonText = () => {
   return (
