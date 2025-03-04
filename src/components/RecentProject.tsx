@@ -7,7 +7,7 @@ import { projects } from "@/data";
 import Link from 'next/link'
 export default function RecentProject() {
   return (
-    <div className="py-20">
+    <div className="py-20" id="project">
       <h1 className="heading">
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
