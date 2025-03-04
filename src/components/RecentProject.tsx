@@ -61,10 +61,12 @@ export default function RecentProject() {
                     </div>
                   ))}
                 </div>
-
-                <div className="flex justify-center items-center">
+                <Link href={item.link}>
+ <div className="flex justify-center items-center">
                   <img src="/git.svg" alt="github" className="p-2" />
                 </div>
+                </Link>
+               
               </div>
             </PinContainer>
           </div>

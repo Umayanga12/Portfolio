@@ -76,7 +76,7 @@ export const projects = [
     des: "Point of Sale system.",
     img: "/pos.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg","/js.svg","/node.svg","/dock.svg"],
-    link: "https://github.com/adrianhajdin?tab=repositories",
+    link: "https://github.com/Umayanga12/Full-stack-pos-system",
   },
   {
     id: 2,
@@ -84,15 +84,16 @@ export const projects = [
     des: "NFT based authentication system.",
     img: "/nft.png",
     iconLists: ["go.svg","python.svg","solidity.svg","node.svg","dock.svg"],
-    link: "https://github.com/adrianhajdin/zoom-clone",
-  },
+    link: "https://github.com/Umayanga12/Nexasecure-V1",
+  
+    },
   {
     id: 3,
     title: "Sentiment-Analysis-NLP" ,
     des: "Can predict the Snetiment of the given text",
     img: "/sent.png",
     iconLists: ["/python.svg","/jupyter.svg"],
-    link: "https://github.com/adrianhajdin/ai_saas_app",
+    link: "https://github.com/Umayanga12/Sentiment-Analysis-NLP",
   },
   {
     id: 4,
@@ -100,7 +101,7 @@ export const projects = [
     des: "Backend server with the API.",
     img: "/backend.png",
     iconLists: ["/go.svg", "/dock.svg","/postgres.svg"],
-    link: "https://github.com/adrianhajdin/iphone",
+    link: "https://github.com/Umayanga12/GO-backend-server",
   },
 ];
 
