@@ -64,7 +64,7 @@ const timelineData = [
 
 export default function Experience() {
   return (
-    <div>
+    <div id="experience">
       <div className="flex justify-center pt-20">
         <SparklesText text="Work Experience" />
       </div>
