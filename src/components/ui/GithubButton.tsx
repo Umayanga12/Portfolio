@@ -1,5 +1,6 @@
 import { FaGithub } from "react-icons/fa";
 import { RainbowButton } from "../magicui/rainbow-button";
+import Link from 'next/link';
 
 const ButtonText = () => {
   return (
@@ -10,14 +11,12 @@ const ButtonText = () => {
   );
 };
 
-
 export function GitHubButton() {
   return (
     <div className="flex items-center justify-center h-full w-full">
-      <RainbowButton onClick={() => (window.location.href = "https://github.com/Umayanga12")}>
+      <RainbowButton>
         <ButtonText />
       </RainbowButton>
     </div>
   );
 }
-
