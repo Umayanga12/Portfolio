@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Umayanga Athapaththu",
   description:
-    "AI & Backend Engineer | Intern Software Engineer @ AASL | Co-founder @ Terracode | Cyber Security & Com.System Enthusiast",
+    "AI & Backend Engineer | Co-founder @ Terracode | Cyber Security & Com.System Enthusiast",
 };
 
 export default function RootLayout({
