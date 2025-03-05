@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { IoCopyOutline } from "react-icons/io5";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"; // Ensure this is defined correctly
 import { BackgroundGradientAnimation } from "./GradientBg";
 import animationData from "@/data/confetti.json";
-import MagicButton from "../MagicButton";
 import { GridIconCloud } from "./IconCloud";
 import Image from "next/image";
+
 // Dynamically import Lottie with SSR disabled
 const Lottie = dynamic(() => import("react-lottie"), {
   ssr: false,
@@ -22,7 +21,6 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        // change gap-4 to gap-8, change grid-cols-3 to grid-cols-5, remove md:auto-rows-[18rem], add responsive code
         "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
         className,
       )}
@@ -51,11 +49,10 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["Python", "Golang", "Typescript"];
-  const rightLists = ["Flutter", "Laravel", "GraphQL"];
-
   const [copied, setCopied] = useState(false);
-
+  const [notification, setNotification] = useState(""); // Add this state
+  const leftLists = ["Python", "Golang", "Rust"];
+  const rightLists = ["Laravel", "NextJS", "GraphQL"];
   const defaultOptions = {
     loop: copied,
     autoplay: copied,
@@ -65,16 +62,33 @@ export const BentoGridItem = ({
     },
   };
 
+  // Handle the button click for copying the email
   const handleCopy = () => {
-    const text = "imanthaumayanga512@gmail.com";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
+    const email = "imanthaumayanga512@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+      setCopied(true);
+      setNotification("Email copied to clipboard!");
+      setTimeout(() => {
+        setNotification(""); // Clear notification after 2 seconds
+      }, 2000);
+    });
   };
+
+  // Reset the "copied" state after a short period to allow the UI to revert
+  useEffect(() => {
+    if (copied) {
+      const timeout = setTimeout(() => {
+        setCopied(false);
+      }, 2000); // Reset after 2 seconds
+
+      return () => clearTimeout(timeout);
+    }
+  }, [copied]);
 
   return (
     <div
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
+        "relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none flex flex-col space-y-4",
         className,
       )}
       style={{
@@ -86,22 +100,28 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
-            <Image
-              src={img}
-              alt="Bento Grid"
-              className={cn(imgClassName, "object-cover object-center")}
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={img}
+                alt="Bento Grid"
+                className={cn(imgClassName, "object-cover object-center")}
+                layout="fill"
+              />
+            </div>
           )}
         </div>
         <div
           className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"}`}
         >
           {spareImg && (
-            <Image
-              src={spareImg}
-              alt="Spare"
-              className="object-cover object-center w-full h-full"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={spareImg}
+                alt="Spare"
+                className="object-cover object-center w-full h-full"
+                layout="fill"
+              />
+            </div>
           )}
         </div>
         {id === 6 && (
@@ -126,26 +146,28 @@ export const BentoGridItem = ({
 
           {id === 2 && <GridIconCloud />}
 
-          {/* Tech stack list */}
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
+              {/* tech stack lists */}
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50
+                              lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
                 ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-[#10132E]"></span>
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
               </div>
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-[#10132E]"></span>
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50
+                              lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
@@ -157,18 +179,20 @@ export const BentoGridItem = ({
           {/* Copy email button */}
           {id === 6 && (
             <div className="mt-5 relative">
-              <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"}`}
+              {copied && (
+                <div className={`absolute -bottom-5 right-0`}>
+                  <Lottie options={defaultOptions} height={200} width={400} />
+                </div>
+              )}
+              <button
+                onClick={handleCopy}
+                className="bg-black text-white py-2 px-6 rounded-lg font-bold text-lg w-full"
               >
-                <Lottie options={defaultOptions} height={200} width={400} />
-              </div>
-              <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
-                position="left"
-                handleClick={handleCopy}
-                otherClasses="!bg-[#161A31]"
-              />
+                Copy Email
+              </button>
+              {notification && (
+                <div className="mt-2 text-sm text-white">{notification}</div>
+              )}
             </div>
           )}
         </div>

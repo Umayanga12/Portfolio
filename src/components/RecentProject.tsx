@@ -72,9 +72,7 @@ export default function RecentProject() {
       <p className="text-gray-200 md:mt-10 my-5 text-center">
         To explore all my projects, visit my GitHub
       </p>
-      <Link href="https://github.com/Umayanga12">
-        <GitHubButton />
-      </Link>
+      <GitHubButton />
     </div>
   );
 }
