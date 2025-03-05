@@ -24,7 +24,7 @@ export default function FooterDock() {
     <div className="relative">
       <Dock direction="middle">
         <DockIcon>
-          <Link href="https://github.com/Umayanga12" traget="_blank">
+          <Link href="https://github.com/Umayanga12">
             <FaGithub />
           </Link>
         </DockIcon>
