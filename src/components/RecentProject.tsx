@@ -1,10 +1,9 @@
-
 import React from "react";
 import { PinContainer } from "./ui/Pin";
-import { FaLocationArrow } from "react-icons/fa";
 import { GitHubButton } from "./ui/GithubButton";
 import { projects } from "@/data";
-import Link from 'next/link'
+import Link from "next/link";
+import Image from "next/image";
 export default function RecentProject() {
   return (
     <div className="py-20" id="project">
@@ -24,9 +23,8 @@ export default function RecentProject() {
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
-                >
-                </div>
-                <img
+                ></div>
+                <Image
                   src={item.img}
                   alt="cover"
                   className="z-10 absolute bottom-0"
@@ -57,16 +55,15 @@ export default function RecentProject() {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon" className="p-2" />
+                      <Image src={icon} alt="icon" className="p-2" />
                     </div>
                   ))}
                 </div>
                 <Link href={item.link}>
- <div className="flex justify-center items-center">
-                  <img src="/git.svg" alt="github" className="p-2" />
-                </div>
+                  <div className="flex justify-center items-center">
+                    <Image src="/git.svg" alt="github" className="p-2" />
+                  </div>
                 </Link>
-               
               </div>
             </PinContainer>
           </div>
@@ -75,10 +72,7 @@ export default function RecentProject() {
       <p className="text-gray-200 md:mt-10 my-5 text-center">
         To explore all my projects, visit my GitHub
       </p>
-        <Link href="https://github.com/Umayanga12">
-                <GitHubButton />
-            </Link>  
+      <GitHubButton />
     </div>
   );
 }
-

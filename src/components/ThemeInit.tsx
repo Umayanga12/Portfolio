@@ -8,7 +8,7 @@ export function ThemeInit() {
 
   useEffect(() => {
     setTheme("dark"); // Ensures the theme is always dark initially
-  }, []);
+  });
 
   return null;
 }

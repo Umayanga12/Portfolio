@@ -54,8 +54,8 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I'm Umayanga, Cyber Security & Com.System Enthusiast based in
-            Sri Lanka.
+            Hi! I&apos;m Umayanga, Cyber Security & Com.System Enthusiast based
+            in Sri Lanka.
           </p>
 
           <a href="#project">

@@ -1,22 +1,15 @@
 import { FaGithub } from "react-icons/fa";
 import { RainbowButton } from "../magicui/rainbow-button";
-import Link from 'next/link';
-
-const ButtonText = () => {
-  return (
-    <div className="flex flex-col items-center">
-      <FaGithub />
-      {/* <b>GitHub</b> */}
-    </div>
-  );
-};
+import Link from "next/link";
 
 export function GitHubButton() {
   return (
     <div className="flex items-center justify-center h-full w-full">
-      <RainbowButton>
-        <ButtonText />
-      </RainbowButton>
+      <Link href="https://github.com/Umayanga12">
+        <RainbowButton>
+          <FaGithub className="text-xl" />
+        </RainbowButton>
+      </Link>
     </div>
   );
 }
