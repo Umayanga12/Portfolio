@@ -27,6 +27,8 @@ export default function RecentProject() {
                 <Image
                   src={item.img}
                   alt="cover"
+                  width={800}
+                  height={600}
                   className="z-10 absolute bottom-0"
                 />
               </div>
@@ -55,13 +57,13 @@ export default function RecentProject() {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <Image src={icon} alt="icon" className="p-2" />
+                      <Image src={icon} alt="icon" width={40} height={40} className="p-2" />
                     </div>
                   ))}
                 </div>
                 <Link href={item.link}>
                   <div className="flex justify-center items-center">
-                    <Image src="/git.svg" alt="github" className="p-2" />
+                    <Image src="/git.svg" alt="github" width={24} height={24} className="p-2" />
                   </div>
                 </Link>
               </div>

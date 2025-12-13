@@ -2,6 +2,7 @@ import React from "react";
 import { SparklesText } from "./magicui/sparkles-text";
 import { ExTimeline } from "./ui/ExTimeLine";
 import Image from "next/image";
+import Link from "next/link";
 const timelineData = [
   {
     title: "2025",
@@ -14,8 +15,23 @@ const timelineData = [
         <Image
           src="/portfolio.png"
           alt="Portfolio Launch"
+          width={800}
+          height={600}
           className="mt-2 rounded-lg"
         />
+        
+        <p className="pt-10">
+          Published my research paper on{" "}
+          <Link 
+            href="https://www.jriiejournal.com/nft-based-authentication-framework-for-securing-enterprise-microservices-in-big-data-environment/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple hover:underline font-semibold"
+          >
+            NFT-Based Authentication Framework for Securing Enterprise Microservices
+          </Link>
+        </p>
+        
       </>
     ),
   },
@@ -30,6 +46,8 @@ const timelineData = [
         <Image
           src="/diagrem.png"
           alt="inpro industries web"
+          width={600}
+          height={400}
           className="mt-2 rounded-lg w-[50%]"
         />
         <p>
@@ -38,13 +56,15 @@ const timelineData = [
         <Image
           src="/inpro.png"
           alt="inpro industries web"
+          width={600}
+          height={400}
           className="mt-2 rounded-lg w-[50%]"
         />
         <p>
           Start the internship at Airport and Aviation servies private Limited
           Srilanka
         </p>
-        <Image src="/aasl.png" alt="AASL" className="mt-2 rounded-lg w-[50%]" />
+        <Image src="/aasl.png" alt="AASL" width={600} height={400} className="mt-2 rounded-lg w-[50%]" />
         {/* <img
           src="/images/fullstack-course.png"
           alt="Full-Stack Course"
@@ -54,6 +74,8 @@ const timelineData = [
         <Image
           src="/terracodedev_cover.jpeg"
           alt="Terracode dev"
+          width={600}
+          height={400}
           className="mt-2 rounded-lg w-[50%]"
         />
       </>
